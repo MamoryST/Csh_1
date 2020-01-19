@@ -67,6 +67,34 @@ namespace CSh_2
             Console.WriteLine("Для выхода в меню нажмите Enter");
             Console.ReadKey(); //Задержка экрана
         }
+        static void Task_5()
+        {
+            Console.Clear();
+            double height, weight;
+            double bmi;
+            Console.WriteLine("!!!Индекс массы тела следует применять с осторожностью, исключительно для ориентировочной оценки!!!");
+            Console.Write("Введите ваш рост(м, пример: 1,68): "); height = Double.Parse(Console.ReadLine());
+            Console.Write("Введите ваш вес(кг, пример: 55,5): "); weight = Double.Parse(Console.ReadLine());
+
+            bmi = Library.BodyMassIndex(height, weight);
+            Console.WriteLine($"Ваш индекс массы тела: {bmi}");
+
+            if (bmi > 0 && bmi <= 16) Console.WriteLine("Выраженный дефицит массы тела.");
+            else if (bmi > 16 && bmi <= 18.5) Console.WriteLine("Недостаточная (дефицит) масса тела.");
+            else if (bmi > 18.5 && bmi <= 25) Console.WriteLine("Норма.");
+            else if (bmi > 25 && bmi <= 30) Console.WriteLine("Избыточная масса тела (предожирение).");
+            else if (bmi > 30 && bmi <= 35) Console.WriteLine("Ожирение.");
+            else if (bmi > 35 && bmi <= 40) Console.WriteLine("Ожирение резкое");
+            else if (bmi > 40) Console.WriteLine("Очень резкое ожирение.");
+            else Console.WriteLine("вводимые данные ошибочны. Перепроверьте!");
+
+            Console.WriteLine("Для выхода в меню нажмите Enter");
+            Console.ReadKey(); //Задержка экрана
+        }
+        static void Task_6()
+        {
+
+        }
         static void Main(string[] args)
         {
             string select;
@@ -78,6 +106,8 @@ namespace CSh_2
                 "2) Количество цифр в числе\n" +
                 "3) Ввод чисел, пока не будет введен 0. Подсчитать сумму всех нечетных чисел\n"+
                 "4) Реализация метода проверки логина и пароля\n" +
+                "5) расчет индекса массы тела\n" +
+                "6) \"Хорошие\" числа\n" +
                 "Для выхода введите слово \"exit\" или 0!");
                 select = Console.ReadLine();
                 switch (select)
@@ -104,6 +134,7 @@ namespace CSh_2
                         }
                     case "5":
                         {
+                            Task_5();
                             break; 
                         }
                     case "6": break;

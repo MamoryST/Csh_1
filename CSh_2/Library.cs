@@ -53,5 +53,9 @@ namespace CSh_2
             if (login == "root" && password == "GeekBrains") return true;
             else return false;
         }
+        static public double BodyMassIndex(double height, double weight)
+        {
+            return (weight / (height * height));
+        }
     }
 }
